@@ -1,5 +1,7 @@
 import { StreamableFile } from '@nestjs/common';
-import { User } from 'src/modules/user/user.model';
+
+import { User } from '../../user/user.model';
+import { UserDto } from 'modules/user/dto/user.dto';
 
 export interface INews {
   id: number;
@@ -8,7 +10,7 @@ export interface INews {
   imagePath?: string;
   text: string;
   createAt: Date;
-  user: User;
+  user: UserDto;
   updateAt: Date;
 }
 

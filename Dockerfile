@@ -10,8 +10,6 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn sequelize-cli db:migrate
-
 RUN yarn build
 
 CMD [ "npm", "run", "start:dev" ]
