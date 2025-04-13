@@ -99,6 +99,7 @@ export class UserService {
       delete userJson.password;
       return userJson;
     } catch (exception) {
+      console.error(exception);
       if (exception instanceof HttpException) {
         throw new BadRequestException(exception.message);
       }
