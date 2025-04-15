@@ -103,6 +103,15 @@ describe("UserService", () => {
     await expect(userService.editUser(userId, updateUser)).rejects.toThrow(
       INVALID_PASSWORD
     );
+    await expect(
+      userService.editUser(userId, { currentPassword: null, newPassword: null })
+    ).rejects.toThrow();
+    await expect(
+      userService.editUser(userId, {
+        currentPassword: "pass",
+        newPassword: "pass",
+      })
+    ).rejects.toThrow();
   });
   it("HttpException", async () => {
     const id = 1;
